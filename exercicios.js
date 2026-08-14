@@ -1,3 +1,6 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
 // ============================================================
 //  LISTA DE EXERCÍCIOS - JAVASCRIPT
 // ============================================================
@@ -20,6 +23,13 @@
 // o resultado da soma, subtração, multiplicação e divisão.
 // ------------------------------------------------------------
 
+let num1 = 1
+let num2 = 2
+
+console.log(num1 + num2)
+console.log(num1 - num2)
+console.log(num1 * num2)
+console.log(num1 / num2)
 
 
 
@@ -29,7 +39,11 @@
 // Fórmula: F = C * 9/5 + 32
 // ------------------------------------------------------------
 
+let C = 20;
 
+let F =  C * 9/5 + 32
+
+console.log(F)
 
 
 // EXERCÍCIO 3 - Par ou ímpar
@@ -39,7 +53,13 @@
 // Se numero % 2 === 0, é par.
 // ------------------------------------------------------------
 
+let numtri = 3
 
+if (numtri % 2 === 0){
+    console.log("par")
+}else{
+    console.log("impar")
+}
 
 
 // EXERCÍCIO 4 - Média de notas
@@ -49,7 +69,19 @@
 // Se não, mostre "Reprovado".
 // ------------------------------------------------------------
 
+let nota1 = 3
+let nota2 = 10
+let nota3 = 7
 
+let media = (nota1 + nota2 + nota3) / 3;
+
+console.log(media)
+
+if (media >= 7){
+    console.log("aprovado")
+}else{
+    console.log("reprovado")
+}
 
 
 // ============================================================
@@ -63,7 +95,13 @@
 // Se não, mostre "Menor de idade".
 // ------------------------------------------------------------
 
+let idade = 18
 
+if (idade >= 18){
+    console.log("ta podendo")
+}else {
+    console.log("n ta podendo")
+}
 
 
 // EXERCÍCIO 6 - Calculadora de IMC
@@ -76,6 +114,20 @@
 //   30 ou mais     = "Obesidade"
 // ------------------------------------------------------------
 
+let peso = 70; 
+let altura = 1.75;
+
+let imc = peso / (altura * altura);
+
+if (imc < 18.5) {
+    console.log("Abaixo do peso");
+} else if (imc >= 18.5 && imc <= 24.9) {
+    console.log("Peso normal");
+} else if (imc >= 25 && imc <= 29.9) {
+    console.log("Sobrepeso");
+} else {
+    console.log("Obesidade");
+}
 
 
 
@@ -88,6 +140,26 @@
 // Compare as jogadas e mostre quem ganhou.
 // ------------------------------------------------------------
 
+let minhaJogada = "pedra";
+
+let opcoes = ['pedra', 'papel', 'tesoura'];
+let computador = opcoes[Math.floor(Math.random() * 3)];
+
+
+console.log("Você jogou: " + minhaJogada);
+console.log("O computador jogou: " + computador);
+
+if (minhaJogada === computador) {
+    console.log("Empate!");
+} else if (
+    (minhaJogada === "pedra" && computador === "tesoura") ||
+    (minhaJogada === "tesoura" && computador === "papel") ||
+    (minhaJogada === "papel" && computador === "pedra")
+) {
+    console.log("Você ganhou!");
+} else {
+    console.log("O computador ganhou!");
+}
 
 
 
@@ -101,6 +173,19 @@
 //   2, 1, 0  = "F"
 // ------------------------------------------------------------
 
+let nota = 8; // Mude este valor para testar
+
+if (nota >= 9) {
+  console.log("A");
+} else if (nota >= 7) {
+  console.log("B");
+} else if (nota >= 5) {
+  console.log("C");
+} else if (nota >= 3) {
+  console.log("D");
+} else {
+  console.log("F");
+}
 
 
 
@@ -118,6 +203,10 @@
 //   ... até "5 x 10 = 50"
 // ------------------------------------------------------------
 
+let numTabuada = 5;
+for (let i = 1; i <= 10; i++) {
+    console.log(numTabuada + " x " + i + " = " + (numTabuada * i));
+}
 
 
 
@@ -127,6 +216,10 @@
 // No final, mostre "Feliz Ano Novo!" (ou qualquer mensagem).
 // ------------------------------------------------------------
 
+for (let i = 10; i >= 0; i--) {
+    console.log(i);
+}
+console.log("Feliz Ano Novo!");
 
 
 
@@ -137,6 +230,12 @@
 // Exemplo: se N = 5, resultado = 1+2+3+4+5 = 15
 // ------------------------------------------------------------
 
+let N = 5;
+let somaTotal = 0;
+for (let i = 1; i <= N; i++) {
+    somaTotal += i;
+}
+console.log(somaTotal);
 
 
 
@@ -149,6 +248,18 @@
 // Dica: use prompt() para pedir o palpite do usuário.
 // ------------------------------------------------------------
 
+let secreto = Math.floor(Math.random() * 10) + 1;
+let palpite = 0;
+while (palpite !== secreto) {
+    palpite = Number(prompt("Adivinhe o número de 1 a 10:"));
+    if (palpite > secreto) {
+        console.log("menor");
+    } else if (palpite < secreto) {
+        console.log("maior");
+    } else {
+        console.log("Parabéns! Acertou!");
+    }
+}
 
 
 
@@ -164,6 +275,10 @@
 // Exemplo: saudacao("Maria") retorna "Olá, Maria!"
 // ------------------------------------------------------------
 
+function saudacao(nome) {
+    return "Olá, " + nome + "!";
+}
+console.log(saudacao("Maria"));
 
 
 
@@ -175,6 +290,16 @@
 // algum divide o número sem resto (numero % i === 0).
 // ------------------------------------------------------------
 
+function ehPrimo(numero) {
+    if (numero <= 1) return false;
+    for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(ehPrimo(7));
 
 
 
@@ -186,6 +311,10 @@
 // inverter, e join('') para voltar a ser string.
 // ------------------------------------------------------------
 
+function inverter(texto) {
+    return texto.split('').reverse().join('');
+}
+console.log(inverter("javascript"));
 
 
 
@@ -197,6 +326,18 @@
 // e verifique cada letra com um for.
 // ------------------------------------------------------------
 
+function contarVogais(palavra) {
+    let minuscula = palavra.toLowerCase();
+    let contador = 0;
+    let vogais = "aeiou";
+    for (let i = 0; i < minuscula.length; i++) {
+        if (vogais.includes(minuscula[i])) {
+            contador++;
+        }
+    }
+    return contador;
+}
+console.log(contarVogais("javascript"));
 
 
 
@@ -212,6 +353,11 @@
 // Remova o último item com pop() e mostre a lista novamente.
 // ------------------------------------------------------------
 
+let listaCompras = [];
+listaCompras.push("maçã", "banana", "arroz", "feijão", "leite");
+console.log(listaCompras);
+listaCompras.pop();
+console.log(listaCompras);
 
 
 
@@ -223,6 +369,11 @@
 // Ou tente fazer com um for (mais desafiador!).
 // ------------------------------------------------------------
 
+let numerosArray = [10, 5, 80, 2, 45, 99, 12, 33];
+let maior = Math.max(...numerosArray);
+let menor = Math.min(...numerosArray);
+console.log("Maior: " + maior);
+console.log("Menor: " + menor);
 
 
 
@@ -233,6 +384,11 @@
 // Dica: use .sort() e .reverse()
 // ------------------------------------------------------------
 
+let nomes = ["Carlos", "Ana", "Bruno", "Eduarda", "Daniel", "Beatriz"];
+nomes.sort();
+console.log(nomes);
+nomes.reverse();
+console.log(nomes);
 
 
 
@@ -243,6 +399,14 @@
 // Dica: use .filter(function(numero) { return numero % 2 === 0 })
 // ------------------------------------------------------------
 
+let numeros20 = [];
+for (let i = 1; i <= 20; i++) {
+    numeros20.push(i);
+}
+let pares = numeros20.filter(function(numero) {
+    return numero % 2 === 0;
+});
+console.log(pares);
 
 
 
@@ -261,6 +425,12 @@
 // Dica: document.body.style.backgroundColor = 'red'
 // ------------------------------------------------------------
 
+const botoesCores = document.querySelectorAll('button');
+if (botoesCores.length >= 3) {
+    botoesCores[0].addEventListener('click', () => document.body.style.backgroundColor = 'red');
+    botoesCores[1].addEventListener('click', () => document.body.style.backgroundColor = 'blue');
+    botoesCores[2].addEventListener('click', () => document.body.style.backgroundColor = 'green');
+}
 
 
 
@@ -272,6 +442,20 @@
 // e atualize o textContent do <h1> a cada clique.
 // ------------------------------------------------------------
 
+let valorContador = 0;
+const h1Contador = document.querySelector('h1');
+const btnMais = document.querySelector('.mais');
+const btnMenos = document.querySelector('.menos');
+if (h1Contador && btnMais && btnMenos) {
+    btnMais.addEventListener('click', () => {
+        valorContador++;
+        h1Contador.textContent = valorContador;
+    });
+    btnMenos.addEventListener('click', () => {
+        valorContador--;
+        h1Contador.textContent = valorContador;
+    });
+}
 
 
 
@@ -283,6 +467,13 @@
 // display: none
 // ------------------------------------------------------------
 
+const btnToggle = document.querySelector('.toggle-btn');
+const divToggle = document.querySelector('.toggle-div');
+if (btnToggle && divToggle) {
+    btnToggle.addEventListener('click', () => {
+        divToggle.classList.toggle('hidden');
+    });
+}
 
 
 
@@ -290,6 +481,9 @@
 // Esse exercício é a atividade principal!
 // Abra o arquivo script.js da atividade e complete os níveis.
 // ------------------------------------------------------------
+
+// (Atividade realizada no arquivo externo script.js)
+
 
 
 // ============================================================
@@ -304,6 +498,47 @@
 // Dica: use setInterval() para contar e clearInterval() para pausar.
 // ------------------------------------------------------------
 
+let segundos = 0;
+let minutos = 0;
+let intervaloCronometro = null;
+const displayCronometro = document.querySelector('.cronometro-display');
+const btnIniciar = document.querySelector('.iniciar');
+const btnPausar = document.querySelector('.pausar');
+const btnResetar = document.querySelector('.resetar');
+
+if (displayCronometro && btnIniciar && btnPausar && btnResetar) {
+    function atualizarDisplay() {
+        let minStr = minutos < 10 ? "0" + minutos : minutos;
+        let segStr = segundos < 10 ? "0" + segundos : segundos;
+        displayCronometro.textContent = minStr + ":" + segStr;
+    }
+
+    btnIniciar.addEventListener('click', () => {
+        if (!intervaloCronometro) {
+            intervaloCronometro = setInterval(() => {
+                segundos++;
+                if (segundos === 60) {
+                    segundos = 0;
+                    minutos++;
+                }
+                atualizarDisplay();
+            }, 1000);
+        }
+    });
+
+    btnPausar.addEventListener('click', () => {
+        clearInterval(intervaloCronometro);
+        intervaloCronometro = null;
+    });
+
+    btnResetar.addEventListener('click', () => {
+        clearInterval(intervaloCronometro);
+        intervaloCronometro = null;
+        segundos = 0;
+        minutos = 0;
+        atualizarDisplay();
+    });
+}
 
 
 
@@ -315,6 +550,27 @@
 //   { pergunta: "...", opcoes: ["a", "b", "c"], correta: 1 }
 // ------------------------------------------------------------
 
+const perguntasQuiz = [
+    { pergunta: "Quanto é 2 + 2?", opcoes: ["3", "4", "5"], correta: 1 },
+    { pergunta: "Qual a capital do Brasil?", opcoes: ["São Paulo", "Brasília", "Rio de Janeiro"], correta: 1 },
+    { pergunta: "Qual linguagem roda no navegador?", opcoes: ["Python", "JavaScript", "C++"], correta: 1 },
+    { pergunta: "Quanto é 5 x 5?", opcoes: ["25", "20", "30"], correta: 0 },
+    { pergunta: "O Sol é uma...", opcoes: ["Estrela", "Planeta", "Lua"], correta: 0 }
+];
+let indicePerguntaAtual = 0;
+let pontuacaoQuiz = 0;
+
+function responderQuiz(escolha) {
+    if (escolha === perguntasQuiz[indicePerguntaAtual].correta) {
+        pontuacaoQuiz++;
+    }
+    indicePerguntaAtual++;
+    if (indicePerguntaAtual < perguntasQuiz.length) {
+        console.log(perguntasQuiz[indicePerguntaAtual].pergunta);
+    } else {
+        console.log("Você acertou " + pontuacaoQuiz + " de " + perguntasQuiz.length);
+    }
+}
 
 
 
@@ -327,6 +583,22 @@
 // Math.random() para escolher caracteres aleatórios.
 // ------------------------------------------------------------
 
+const btnGerarSenha = document.querySelector('.gerar-senha');
+const inputTamanho = document.querySelector('.tamanho-senha');
+const displaySenha = document.querySelector('.display-senha');
+
+if (btnGerarSenha && inputTamanho && displaySenha) {
+    btnGerarSenha.addEventListener('click', () => {
+        let tamanho = Number(inputTamanho.value) || 8;
+        let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+        let senha = "";
+        for (let i = 0; i < tamanho; i++) {
+            let randomIndex = Math.floor(Math.random() * chars.length);
+            senha += chars[randomIndex];
+        }
+        displaySenha.textContent = senha;
+    });
+}
 
 
 
@@ -337,4 +609,24 @@
 // Dica: mude o atributo src da <img> com JavaScript.
 // ------------------------------------------------------------
 
+const imagensGaleria = [
+    "img1.jpg",
+    "img2.jpg",
+    "img3.jpg"
+];
+let indiceImagemAtual = 0;
+const imgElemento = document.querySelector('.galeria-img');
+const btnAnterior = document.querySelector('.anterior');
+const btnProximo = document.querySelector('.proximo');
 
+if (imgElemento && btnAnterior && btnProximo) {
+    btnProximo.addEventListener('click', () => {
+        indiceImagemAtual = (indiceImagemAtual + 1) % imagensGaleria.length;
+        imgElemento.src = imagensGaleria[indiceImagemAtual];
+    });
+
+    btnAnterior.addEventListener('click', () => {
+        indiceImagemAtual = (indiceImagemAtual - 1 + imagensGaleria.length) % imagensGaleria.length;
+        imgElemento.src = imagensGaleria[indiceImagemAtual];
+    });
+}
